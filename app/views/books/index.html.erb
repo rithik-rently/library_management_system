@@ -1,0 +1,11 @@
+<h1 style="text-align:center; background-color:grey;">BOOKS AVAILABLE</h1>
+<br>
+  <ul>
+  <% @books.each do |book| %>
+    <li style="display:flex;justify-content:center">
+      <%= link_to book, books_show_path(title: book) %>
+    </li>
+  <% end %>
+</ul>
+  
+

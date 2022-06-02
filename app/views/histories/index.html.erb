@@ -1,0 +1,25 @@
+<h1 style="text-align:center; background-color:grey;">BORROW HISTORY</h1>
+
+<table class="table" style="border:1px solid gray;margin-top:2%">
+<thead>
+    <tr >
+        <th><%= " BOOK ID" %></th>
+        <th><%= " TITLE "%></th>
+        <th><%= " ISSUE DATE "%></th>
+        <th><%= " RETURN DATE "%></th>    
+    </tr>
+</thead>
+    <tbody>
+        <% @histories.each do |history| %>
+        <tr >
+            <td><%= history.book.id %></td>
+            <td><%= history.book.title %></td>
+            <td><%= history.issue_date %></td>
+            <td style="width:150px"><%= history.return_date %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+        
+

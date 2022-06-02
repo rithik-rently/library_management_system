@@ -1,0 +1,9 @@
+<h2 style="background-color:grey;">BOOK DETAILS</h2>    
+    <h3>Book Id : <%= @book.id%></h3>
+    <h3>Book Title : <%= @book.title%></h3>
+    <h3>ISBN : <%= @book.isbn%></h3>
+    <h3>Author : <%= @book.author%></h3>
+    <h3>Publisher : <%= @book.publisher%></h3>
+    <h3>Issue Date : <%= @history.issue_date %></h3>
+
+    <%= link_to "Return", "/return/#{@book.id}", method: :put %>

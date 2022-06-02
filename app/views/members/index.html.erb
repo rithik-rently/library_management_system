@@ -1,0 +1,26 @@
+<% if user_signed_in?%>
+<h1 style="text-align:center; background-color:grey;">BOOKS HOLDING</h1> 
+  <ul>
+  <% @books.each do |book| %>
+    
+    <li style="display:flex;justify-content:center">
+      <%= link_to book.book.title, "/current_history/#{book.book.id}" %>
+    </li>
+    
+  <% end %>
+</ul>
+<%# 
+<br>
+<br>
+<%= link_to "Issue", books_path%>
+<%# <br>
+<br>
+<%= link_to "Borrow History", histories_path %>
+<%# <br>
+<br>
+<%= link_to "My Wallet", wallet_path(current_user.id)%>
+<% end %>
+
+
+
+
