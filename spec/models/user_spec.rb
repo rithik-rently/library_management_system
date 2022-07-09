@@ -44,9 +44,16 @@ RSpec.describe User, :type => :model do
 
     it {should have_one(:wallet_card).through(:wallet)}
 
+
+
     it "should create wallet on create user" do
         expect(subject.wallet).to_not eq(nil)
     end
+
+    it "creates a new wallet " do
+        expect{create(:user)}.to change(Wallet, :count).by(+1)
+        #   expect(response).to have_http_status(200)
+      end
 
 
 end

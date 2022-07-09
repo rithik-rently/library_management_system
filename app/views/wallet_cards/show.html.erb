@@ -1,5 +1,9 @@
-<h1>YOUR LIBRARY CARD</h1>
-
+<h1 style="text-align:center">YOUR LIBRARY CARD</h1>
+<div style="text-align:center;border:1px solid gray;margin-top:2%">
 <h3>Card Number: <%= @wallet_card.card_number%></h3>
 <h3>Expiry Date: <%= @wallet_card.expiry_date%></h3>
 <h3>CVV: <%= @wallet_card.cvv%></h3>
+</div>
+<div style="display:flex;justify-content:center;margin-top:5px"><button style="border:1.5px solid gray;border-radius:5px;text-decoration:none">
+<%= link_to "Recharge Wallet", '/wallet_card/recharge' %>
+</div>

@@ -1,5 +1,6 @@
 class WalletCardsController < ApplicationController
 
+    before_action :authenticate_user!
     def show
         user = User.find(current_user.id)
         puts("user wallet card: #{user.wallet.wallet_card}")
@@ -17,8 +18,7 @@ class WalletCardsController < ApplicationController
     end
     
     def create
-        user = User.find(current_user.id)
-            
+        user = User.find(current_user.id)   
         if user.wallet.create_wallet_card(wallet_card_params)
             redirect_to borrowed_path
         else
@@ -26,6 +26,19 @@ class WalletCardsController < ApplicationController
         end
     end
 
+    def recharge 
+        
+    end
+
+    def add
+        user = User.find(current_user.id)
+        @wallet = Wallet.find_by(users_id:current_user.id)
+        if @wallet.update(points: @wallet.points + params["points"].to_i)
+          redirect_to "/borrowed"
+        end
+    end
+
+    
     def wallet_card_params
         params.require(:wallet_card).permit(:card_number, :expiry_date, :cvv)
     end

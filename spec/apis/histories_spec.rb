@@ -17,13 +17,11 @@ RSpec.describe "Histories", :type => :request do
             get "/api/histories", params: {}, headers: {'Authorization': 'Bearer ' + token.token}
             res = JSON.parse(response.body)
             expect(response).to have_http_status(200)
-            
         end
-
 
         it "updates history details successfully" do
             history = create(:history,users_id: user.id)
-            put "/api/histories/#{history.id}", params: {book: {title: "Power"}}, headers: { 'Authorization': 'Bearer ' + token.token }
+            put "/api/histories/#{history.id}", params: {history: {return_date: "2022-07-05"}}, headers: { 'Authorization': 'Bearer ' + token.token }
             expect(response).to have_http_status(200)
         end
 

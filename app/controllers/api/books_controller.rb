@@ -2,6 +2,7 @@ class Api::BooksController < ApplicationController
 
   
    before_action :current_user
+   before_action :doorkeeper_authorize!
 
   def index
     @books = Book.where("available_copies >= ?", 1).distinct.pluck(:title)

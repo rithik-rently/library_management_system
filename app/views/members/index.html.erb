@@ -1,9 +1,9 @@
 <% if user_signed_in?%>
 <h1 style="text-align:center; background-color:grey;">BOOKS HOLDING</h1> 
-  <ul>
+  <ul style="margin-top:3%;">
   <% @books.each do |book| %>
     
-    <li style="display:flex;justify-content:center">
+    <li style="display:flex;justify-content:center;margin-top:0.5%;font-size:22px">
       <%= link_to book.book.title, "/current_history/#{book.book.id}" %>
     </li>
     

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get "/wallet_card", to: "wallet_cards#show" 
   get "/wallet_card/new", to: "wallet_cards#new" 
   post "/wallet_card/create", to: "wallet_cards#create" 
+  get "/wallet_card/recharge", to: "wallet_cards#recharge"
+  post "/wallet_card/add", to: "wallet_cards#add"
 
 
   # resources :users
